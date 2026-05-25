@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>적용 제형 — Kimette</title>
+  <meta name="description" content="Kimette 피코에리트린이 적용될 수 있는 화장품 제형들을 살펴봅시다.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Kimette</a>
+      <div class="nav-links">
+        <a href="process.html">원료 공정</a>
+        <a href="technology.html">기술 원료</a>
+        <a href="applications.html" class="nav-active">적용 제형</a>
+        <a href="news.html">최신 소식</a>
+        <a href="contact.html" class="nav-cta">문의하기</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="메뉴" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="process.html" class="mobile-link">원료 공정</a>
+      <a href="technology.html" class="mobile-link">기술 원료</a>
+      <a href="applications.html" class="mobile-link">적용 사례</a>
+      <a href="news.html" class="mobile-link">최신 소식</a>
+      <a href="contact.html" class="mobile-link mobile-link-cta">문의하기</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="background: var(--dark); padding: 80px 0 60px; position: relative; overflow: hidden;">
+    <div class="container">
+      <div class="page-hero-content fade-in" style="opacity: 1;">
+        <div style="font-size: clamp(0.875rem, 2vw, 1.2rem); letter-spacing: 0.05em; text-transform: uppercase; color: var(--magenta-bright); margin-bottom: 20px; font-weight: 500;">Applications</div>
+        <h1 style="font-size: clamp(1.8rem, 3.4vw, 3.2rem); font-weight: 800; margin: 0; line-height: 1.2;">Kimette 적용 제형</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPLICATIONS ===== -->
+  <section id="applications">
+    <div class="container">
+      <p class="section-desc-dark fade-in">Kimette 피코에리트린은 수용성 색소로, 수계 기반 제형 전반에 적용 가능합니다.<br>아래 카테고리를 선택하여 각 제형별 특성을 확인하세요.</p>
+
+      <!-- Category Tabs -->
+      <div class="category-tabs fade-in" style="margin: 60px 0 40px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <button class="category-btn active" data-category="makeup">메이크업</button>
+        <button class="category-btn" data-category="skincare">스킨케어</button>
+        <button class="category-btn" data-category="body">바디</button>
+        <button class="category-btn" data-category="hair">헤어</button>
+      </div>
+
+      <!-- Makeup Category -->
+      <div class="category-content fade-in" data-category="makeup" style="display: block;">
+        <h3 style="font-size: 1.4rem; margin: 40px 0 30px; text-align: center;">메이크업</h3>
+        <div class="formulas-grid">
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/lipstick.jpg" alt="립스틱"></div>
+            <div class="formula-info">
+              <h5>립스틱</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Lipstick</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">Red 6·Red 7 직접 대체 검토 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/lipgloss.jpg" alt="립글로스"></div>
+            <div class="formula-info">
+              <h5>립글로스</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Lip Gloss</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">발색 안정성 확인 중</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/liptint.jpg" alt="립틴트"></div>
+            <div class="formula-info">
+              <h5>립틴트</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Lip Tint</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">수용성 액상 적용 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/foundation.jpg" alt="파운데이션"></div>
+            <div class="formula-info">
+              <h5>파운데이션</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Foundation</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">수계 제형 직접 적용</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/bbcc.jpg" alt="BB/CC"></div>
+            <div class="formula-info">
+              <h5>BB/CC</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">BB/CC Cream</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">톤 보정 기능 강화</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/concealer.jpg" alt="컨실러"></div>
+            <div class="formula-info">
+              <h5>컨실러</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Concealer</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">커버력 유지 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/colorcorrecting.jpg" alt="컬러 코렉팅"></div>
+            <div class="formula-info">
+              <h5>컬러 코렉팅</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Color Correcting</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">저농도 발색 제형</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/powder.jpg" alt="파우더"></div>
+            <div class="formula-info">
+              <h5>파우더</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Powder</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">색상 안정성 우수</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/blusher.jpg" alt="블러셔"></div>
+            <div class="formula-info">
+              <h5>블러셔</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Blush</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">자연스러운 톤 표현</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/eyeliner.jpg" alt="아이라이너"></div>
+            <div class="formula-info">
+              <h5>아이라이너</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Eyeliner</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">색상 가능성 검토 중</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/eyebrow.jpg" alt="아이브로우"></div>
+            <div class="formula-info">
+              <h5>아이브로우</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Eyebrow</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">톤 표현 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/eyeshadow.jpg" alt="아이섀도우"></div>
+            <div class="formula-info">
+              <h5>아이섀도우</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Eyeshadow</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">색감 적용 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/makeup/eyeprimer.jpg" alt="아이프라이머"></div>
+            <div class="formula-info">
+              <h5>아이프라이머</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Eye Primer</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">컬러 프라이머 가능</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skincare Category -->
+      <div class="category-content fade-in" data-category="skincare" style="display: none;">
+        <h3 style="font-size: 1.4rem; margin: 40px 0 30px; text-align: center;">스킨케어</h3>
+        <div class="formulas-grid">
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/skincare/sunbase.jpg" alt="선베이스"></div>
+            <div class="formula-info">
+              <h5>선베이스</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Sunscreen Base</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">SPF 제형과 혼합 안정성</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/skincare/serum-essence.jpg" alt="세럼/에센스"></div>
+            <div class="formula-info">
+              <h5>세럼/에센스</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Serum/Essence</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">수용성 액상 직접 적용</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/skincare/facescrub.jpg" alt="스크럽제"></div>
+            <div class="formula-info">
+              <h5>스크럽제</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Scrub</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">안정성 검토 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/skincare/cleansing.jpg" alt="클렌징"></div>
+            <div class="formula-info">
+              <h5>클렌징</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Cleansing</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">수계 제형 적용 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/skincare/toner-mist.jpg" alt="토너/미스트"></div>
+            <div class="formula-info">
+              <h5>토너/미스트</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Toner/Mist</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">음이온 발색 제형</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/skincare/face-oil.jpg" alt="페이스 오일"></div>
+            <div class="formula-info">
+              <h5>페이스 오일</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Face Oil</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">지용성 기반 검토 중</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Body Category -->
+      <div class="category-content fade-in" data-category="body" style="display: none;">
+        <h3 style="font-size: 1.4rem; margin: 40px 0 30px; text-align: center;">바디</h3>
+        <div class="formulas-grid">
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/body/bodyscrub.jpg" alt="바디스크럽"></div>
+            <div class="formula-info">
+              <h5>바디스크럽</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Body Scrub</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">입자 안정성 확인 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/body/bodywash.jpg" alt="바디워시"></div>
+            <div class="formula-info">
+              <h5>바디워시</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Body Wash</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">색상 발현 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/body/bodycream.jpg" alt="바디크림/핸드크림"></div>
+            <div class="formula-info">
+              <h5>바디크림/핸드크림</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Body/Hand Cream</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">포유화 안정성 검토</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/body/handwash.jpg" alt="핸드워시"></div>
+            <div class="formula-info">
+              <h5>핸드워시</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Hand Wash</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">수계 기반 직접 사용</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hair Category -->
+      <div class="category-content fade-in" data-category="hair" style="display: none;">
+        <h3 style="font-size: 1.4rem; margin: 40px 0 30px; text-align: center;">헤어</h3>
+        <div class="formulas-grid">
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/hair/shampoo.jpg" alt="샴푸"></div>
+            <div class="formula-info">
+              <h5>샴푸</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Shampoo</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">색감 안정성 검토</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/hair/hairscrub.jpg" alt="두피스크럽"></div>
+            <div class="formula-info">
+              <h5>두피스크럽</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Scalp Scrub</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">흡수성 분석 가능</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/hair/hairoil.jpg" alt="헤어오일"></div>
+            <div class="formula-info">
+              <h5>헤어오일</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Hair Oil</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">지용성 기반 검토</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/hair/hairgel.jpg" alt="헤어젤"></div>
+            <div class="formula-info">
+              <h5>헤어젤</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Hair Gel</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">착색 가능성 검토</p>
+            </div>
+          </div>
+          <div class="formula-card fade-in">
+            <div class="formula-img"><img src="formulation-images/hair/haircream.jpg" alt="헤어팩/크림"></div>
+            <div class="formula-info">
+              <h5>헤어팩/크림</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted-dk); margin: 8px 0;">Hair Pack/Cream</p>
+              <p style="font-size: 0.85rem; margin: 12px 0;">포유화 안정성 검토</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="app-cta fade-in" style="margin-top: 60px;">
+        <div>
+          <p class="app-cta-title">제형 적합성 기술 검토</p>
+          <p>현재 사용 중인 색소 번호(CI No.)와 목표 제형을 알려주시면<br>적용 가능 여부를 기술 검토 후 회신드립니다.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">검토 요청 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">Kimette</span>
+      <span class="footer-copy">© 2025 Kimette. All rights reserved.</span>
+      <a href="mailto:contact@kimette.com" class="footer-email">contact@kimette.com</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

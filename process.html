@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>원료 공정 — Kimette</title>
+  <meta name="description" content="김에서 피코에리트린으로 변환되는 과정과 해결해야 할 문제들을 살펴봅시다.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Kimette</a>
+      <div class="nav-links">
+        <a href="process.html" class="nav-active">원료 공정</a>
+        <a href="technology.html">기술 원료</a>
+        <a href="applications.html">적용 제형</a>
+        <a href="news.html">최신 소식</a>
+        <a href="contact.html" class="nav-cta">문의하기</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="메뉴" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="process.html" class="mobile-link">원료 공정</a>
+      <a href="technology.html" class="mobile-link">기술 원료</a>
+      <a href="applications.html" class="mobile-link">적용 사례</a>
+      <a href="news.html" class="mobile-link">최신 소식</a>
+      <a href="contact.html" class="mobile-link mobile-link-cta">문의하기</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="background: var(--dark); padding: 80px 0 60px; position: relative; overflow: hidden;">
+    <div class="container">
+      <div class="page-hero-content fade-in" style="opacity: 1;">
+        <div style="font-size: clamp(0.875rem, 2vw, 1.2rem); letter-spacing: 0.05em; text-transform: uppercase; color: var(--magenta-bright); margin-bottom: 20px; font-weight: 500;">Raw Material Process</div>
+        <h1 style="font-size: clamp(1.8rem, 3.4vw, 3.2rem); font-weight: 800; margin: 0; line-height: 1.2;">김 한 장이<br>색소가 되기까지</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section id="process">
+    <div class="container">
+      <div class="process-header fade-in">
+        <div class="section-label">Raw Material Process</div>
+        <h2>각 단계별 공정</h2>
+      </div>
+      <div class="process-flow">
+        <div class="process-step fade-in" style="--delay:0ms">
+          <div class="step-num">01</div>
+          <div class="step-icon step-01">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <path d="M4 14 Q7 8 10 14 Q13 20 16 14 Q19 8 22 14 Q25 20 28 14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M4 19 Q7 13 10 19 Q13 25 16 19 Q19 13 22 19" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="step-info">
+            <strong>국내산 김 수급</strong>
+            <span>Pyropia yezoensis<br>식품 등급 원산지</span>
+          </div>
+        </div>
+        <div class="process-connector fade-in" style="--delay:60ms"></div>
+        <div class="process-step fade-in" style="--delay:120ms">
+          <div class="step-num">02</div>
+          <div class="step-icon step-02">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <path d="M8 4 L8 14 L4 24 L24 24 L20 14 L20 4 Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <line x1="8" y1="10" x2="20" y2="10" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="14" cy="19" r="2.5" fill="currentColor" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="step-info">
+            <strong>추출·정제</strong>
+            <span>세포 파쇄 및<br>분리 공정</span>
+          </div>
+        </div>
+        <div class="process-connector fade-in" style="--delay:180ms"></div>
+        <div class="process-step fade-in" style="--delay:240ms">
+          <div class="step-num">03</div>
+          <div class="step-icon step-03">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="14" r="10" fill="currentColor"/>
+              <circle cx="10" cy="10" r="3.5" fill="white" opacity="0.35"/>
+            </svg>
+          </div>
+          <div class="step-info">
+            <strong>피코에리트린</strong>
+            <span>565 nm · 수용성<br>액상 / 분말</span>
+          </div>
+        </div>
+        <div class="process-connector fade-in" style="--delay:300ms"></div>
+        <div class="process-step fade-in" style="--delay:360ms">
+          <div class="step-num">04</div>
+          <div class="step-icon step-04">
+            <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+              <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="14" cy="14" r="6" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+              <circle cx="14" cy="14" r="2.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="step-info">
+            <strong>자사 안정화 기술</strong>
+            <span>제형 안정성<br>강화 처리</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEM ===== -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-label-mg fade-in">Problem</div>
+      <h2 class="fade-in">타르색소는 여전히<br>색조 화장품의 기본값입니다</h2>
+
+      <div class="ci-list fade-in">
+        <code class="ci-tag">Red 6 (CI 15850)</code>
+        <code class="ci-tag">Red 7 (CI 15850:1)</code>
+        <code class="ci-tag">Red 27 (CI 45410)</code>
+        <code class="ci-tag">Red 33 (CI 17200)</code>
+        <code class="ci-tag">Red 40 (CI 16035)</code>
+      </div>
+      <p class="problem-desc fade-in">
+        이 색소들은 석탄 타르에서 유래한 합성 아조 색소이며,<br>
+        현재 시중 립 제품의 주요 발색 원료로 사용되고 있습니다.
+      </p>
+
+      <div class="section-divider dark-div fade-in"></div>
+      <p class="section-intro-sm fade-in">세 가지 구조적 문제가 있습니다.</p>
+
+      <div class="problem-cards">
+        <div class="problem-card fade-in" style="--delay:0ms">
+          <div class="problem-icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <!-- document body -->
+              <path d="M9 5 L9 39 L31 39 L31 14 L22 5 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- folded corner -->
+              <path d="M22 5 L22 14 L31 14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- shrinking list lines -->
+              <line x1="14" y1="21" x2="26" y2="21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="14" y1="26" x2="22" y2="26" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="14" y1="31" x2="17" y2="31" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="problem-num">01</div>
+          <h3>규제</h3>
+          <p class="problem-sub-title">허용 목록은 계속 줄어들고 있습니다</p>
+          <p>EU Cosmetics Regulation (EC) No 1223/2009 Annex IV는 화장품에 사용 가능한 색소를 양적 허용 방식으로 관리합니다. SCCS의 안전성 재평가가 진행 중이며, EU·영국 수출을 목표로 한다면 지금 사용하는 색소가 내년에도 허용 목록에 있을지 확인이 필요합니다.</p>
+        </div>
+        <div class="problem-card fade-in" style="--delay:80ms">
+          <div class="problem-icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <!-- eye outline -->
+              <path d="M5 22 C5 22 12 11 22 11 C32 11 39 22 39 22 C39 22 32 33 22 33 C12 33 5 22 5 22 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- iris -->
+              <circle cx="22" cy="22" r="5.5" stroke="currentColor" stroke-width="1.8"/>
+              <!-- pupil -->
+              <circle cx="22" cy="22" r="2.2" fill="currentColor"/>
+              <!-- attention lines top-right -->
+              <line x1="31" y1="10" x2="33" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="35" y1="14" x2="38" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="34" y1="8" x2="36" y2="6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="problem-num">02</div>
+          <h3>소비자</h3>
+          <p class="problem-sub-title">성분 가시성이 높아졌습니다</p>
+          <p>국내 화해 앱 기준 월간 성분 조회 수는 수천만 건에 달합니다. '타르색소'는 앱 내에서 주의 성분으로 분류되며, 소비자 구매 결정에 직접 영향을 줍니다.</p>
+        </div>
+        <div class="problem-card fade-in" style="--delay:160ms">
+          <div class="problem-icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+              <!-- shield -->
+              <path d="M22 4 L37 10 L37 25 C37 33 22 40 22 40 C22 40 7 33 7 25 L7 10 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <!-- X mark -->
+              <line x1="16" y1="18" x2="28" y2="30" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <line x1="28" y1="18" x2="16" y2="30" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="problem-num">03</div>
+          <h3>인증</h3>
+          <p class="problem-sub-title">타르색소가 있으면 인증 자체가 불가합니다</p>
+          <p>COSMOS-standard와 Vegan Society 인증은 합성 타르색소를 원료로 허용하지 않습니다. 클린뷰티 브랜드로의 전환을 목표로 한다면, 색소 교체는 선택이 아닌 전제 조건입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CALLOUT ===== -->
+  <section id="callout">
+    <div class="container">
+      <div class="callout-inner fade-in">
+        <p class="callout-kicker">Kimette Solution</p>
+        <h2>유일한<br>해양 식물성 적색</h2>
+        <p class="callout-desc">카민도, 타르색소도 아닌.<br>김(<em>Pyropia yezoensis</em>)에서 온 단 하나의 적색 색소.</p>
+        <div class="callout-badges">
+          <span>Vegan ✓</span>
+          <span>COSMOS ✓</span>
+          <span>Non-Animal ✓</span>
+          <span>EU Compliant ✓</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">Kimette</span>
+      <span class="footer-copy">© 2025 Kimette. All rights reserved.</span>
+      <a href="mailto:contact@kimette.com" class="footer-email">contact@kimette.com</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

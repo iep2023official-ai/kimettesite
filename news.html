@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>최신 소식 — Kimette</title>
+  <meta name="description" content="Kimette의 최신 뉴스, 보도자료, 그리고 언론 보도를 확인하세요.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Kimette</a>
+      <div class="nav-links">
+        <a href="process.html">원료 공정</a>
+        <a href="technology.html">기술 원료</a>
+        <a href="applications.html">적용 제형</a>
+        <a href="news.html" class="nav-active">최신 소식</a>
+        <a href="contact.html" class="nav-cta">문의하기</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="메뉴" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="process.html" class="mobile-link">원료 공정</a>
+      <a href="technology.html" class="mobile-link">기술 원료</a>
+      <a href="applications.html" class="mobile-link">적용 사례</a>
+      <a href="news.html" class="mobile-link">최신 소식</a>
+      <a href="contact.html" class="mobile-link mobile-link-cta">문의하기</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="background: var(--dark); padding: 80px 0 60px; position: relative; overflow: hidden;">
+    <div class="container">
+      <div class="page-hero-content fade-in" style="opacity: 1;">
+        <div style="font-size: clamp(0.875rem, 2vw, 1.2rem); letter-spacing: 0.05em; text-transform: uppercase; color: var(--magenta-bright); margin-bottom: 20px; font-weight: 500;">News</div>
+        <h1 style="font-size: clamp(1.8rem, 3.4vw, 3.2rem); font-weight: 800; margin: 0; line-height: 1.2;">최신 소식</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS ===== -->
+  <section id="news" style="padding: 120px 0; background: var(--dark);">
+    <div class="container">
+      <div class="section-label-mg fade-in">News & Press</div>
+      <h2 class="fade-in">Kimette의 최신 뉴스</h2>
+      <p class="section-desc-dark fade-in" style="margin-bottom: 60px;">향후 언론화될 기사들과 소식을 공유합니다.</p>
+
+      <!-- News Items -->
+      <div class="news-grid" style="display: grid; gap: 40px; margin-top: 40px;">
+        <div class="news-item fade-in" style="padding: 40px; background: var(--dark-3); border: 1px solid var(--border-dk); border-radius: var(--r-lg); transition: all 0.22s ease;">
+          <div style="color: var(--text-muted-dk); font-size: 0.9rem; margin-bottom: 12px;">곧 업데이트될 예정입니다</div>
+          <h3 style="font-size: 1.4rem; margin: 0 0 16px; color: var(--text-dk);">최신 소식 준비 중</h3>
+          <p style="color: var(--text-muted-dk); line-height: 1.7;">Kimette의 흥미로운 뉴스와 언론 보도를 곧 공개할 예정입니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA SECTION ===== -->
+  <section style="padding: 80px 0; background: var(--dark);">
+    <div class="container">
+      <div class="app-cta fade-in" style="margin-top: 0;">
+        <div>
+          <p class="app-cta-title">문의 사항이 있으신가요?</p>
+          <p>Kimette에 대해 더 알아보고 싶으시거나, 협력 제안이 있으시면 언제든지 문의해주세요.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">문의하기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">Kimette</span>
+      <span class="footer-copy">© 2025 Kimette. All rights reserved.</span>
+      <a href="mailto:contact@kimette.com" class="footer-email">contact@kimette.com</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

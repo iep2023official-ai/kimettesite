@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문의하기 — Kimette</title>
+  <meta name="description" content="Kimette에 문의하고 샘플 키트 및 기술 자료를 신청하세요.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Kimette</a>
+      <div class="nav-links">
+        <a href="process.html">원료 공정</a>
+        <a href="technology.html">기술 원료</a>
+        <a href="applications.html">적용 제형</a>
+        <a href="news.html">최신 소식</a>
+        <a href="contact.html" class="nav-cta nav-active">문의하기</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="메뉴" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="process.html" class="mobile-link">원료 공정</a>
+      <a href="technology.html" class="mobile-link">기술 원료</a>
+      <a href="applications.html" class="mobile-link">적용 사례</a>
+      <a href="news.html" class="mobile-link">최신 소식</a>
+      <a href="contact.html" class="mobile-link mobile-link-cta">문의하기</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="background: var(--dark); padding: 80px 0 60px; position: relative; overflow: hidden;">
+    <div class="container">
+      <div class="page-hero-content fade-in" style="opacity: 1;">
+        <div style="font-size: clamp(0.875rem, 2vw, 1.2rem); letter-spacing: 0.05em; text-transform: uppercase; color: var(--magenta-bright); margin-bottom: 20px; font-weight: 500;">Philosophy &amp; Contact</div>
+        <h1 style="font-size: clamp(1.8rem, 3.4vw, 3.2rem); font-weight: 800; margin: 0; line-height: 1.2;">우리의 원칙과<br>연락처</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHILOSOPHY ===== -->
+  <section id="philosophy">
+    <div class="container">
+      <div class="section-label fade-in">Philosophy</div>
+      <div class="philosophy-grid">
+        <div class="philosophy-text fade-in">
+          <h2>김 한 장에서<br>시작합니다</h2>
+          <p>한국의 연안에서 양식되는 김(<em>Pyropia yezoensis</em>)은 세계 생산량 기준으로 한국이 주요 공급국입니다. Kimette는 이 원료를 식품 등급 원산지에서 수급하고, 색소 추출부터 품질 관리까지 국내에서 일관 생산합니다.</p>
+          <p class="philosophy-quote">공급망이 짧을수록 추적이 쉽고,<br>추적이 쉬울수록 브랜드의 클레임이 단단해집니다.</p>
+        </div>
+        <div class="philosophy-principles fade-in">
+          <p class="principles-heading">Kimette의 원료 원칙</p>
+          <ul class="principles-list">
+            <li>
+              <span class="check">✓</span>
+              <div><strong>No Animal-Derived Ingredients</strong><span>동물 유래 성분 없음</span></div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div><strong>No Coal-Tar Synthetic Dyes</strong><span>석유계 합성 색소 없음</span></div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div><strong>Domestic Traceable Supply Chain</strong><span>국내 원료 추적 가능 생산</span></div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div><strong>Designed for EU Export Compliance</strong><span>EU 수출 적합 기준 설계</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-divider fade-in"></div>
+      <div class="news-section fade-in">
+        <h3>소식</h3>
+        <p class="news-placeholder">언론 보도·수상·학술 발표 자료 준비 중입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-label-mg fade-in">Contact</div>
+      <h2 class="fade-in">원료 도입을<br>검토 중이시라면</h2>
+      <p class="contact-desc fade-in">기술 미팅 전, 샘플 키트와 데이터시트를 먼저 보내드립니다.<br>아래 정보를 함께 남겨주시면 보다 정확한 기술 검토가 가능합니다.</p>
+
+      <form id="contact-form" class="fade-in" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="f-company">회사명 / 이름 <span class="req">*</span></label>
+            <input type="text" id="f-company" name="company" placeholder="예: OO코스메틱스 홍길동" required>
+          </div>
+          <div class="form-group">
+            <label for="f-email">이메일 <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" placeholder="example@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="f-pigment">현재 사용 색소 <span class="optional">(CI No. 또는 색소명)</span></label>
+            <input type="text" id="f-pigment" name="pigment" placeholder="예: Red 6 (CI 15850)">
+          </div>
+          <div class="form-group">
+            <label for="f-formulation">목표 제형 및 적용 카테고리</label>
+            <input type="text" id="f-formulation" name="formulation" placeholder="예: 립스틱, 블러셔">
+          </div>
+          <div class="form-group">
+            <label for="f-cert">필요 인증 <span class="optional">(선택)</span></label>
+            <input type="text" id="f-cert" name="certification" placeholder="예: COSMOS, Vegan Society">
+          </div>
+          <div class="form-group">
+            <label for="f-volume">예상 사용량 <span class="optional">(선택)</span></label>
+            <input type="text" id="f-volume" name="volume" placeholder="예: 약 10 kg / 월">
+          </div>
+        </div>
+        <div class="form-group form-group-full">
+          <label for="f-message">추가 문의사항 <span class="optional">(선택)</span></label>
+          <textarea id="f-message" name="message" rows="4" placeholder="기술적 요구사항, 일정 등을 자유롭게 적어주세요."></textarea>
+        </div>
+        <button type="submit" class="btn btn-accent btn-large">샘플 및 기술 상담 신청 →</button>
+      </form>
+
+      <div id="form-success" class="form-success" hidden>
+        <div class="form-success-icon">✓</div>
+        <p>신청이 완료되었습니다.<br>영업일 기준 48시간 이내에 회신드립니다.</p>
+        <p class="success-email">contact@kimette.com</p>
+      </div>
+
+      <div class="contact-footer fade-in">
+        <a href="mailto:contact@kimette.com" class="contact-email">contact@kimette.com</a>
+        <span>영업일 기준 48시간 이내 회신드립니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo">Kimette</span>
+      <span class="footer-copy">© 2025 Kimette. All rights reserved.</span>
+      <a href="mailto:contact@kimette.com" class="footer-email">contact@kimette.com</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
