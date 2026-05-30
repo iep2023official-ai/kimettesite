@@ -1075,3 +1075,4 @@ footer { background: #080707; padding: 32px 0; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+#news-grid > div { opacity: 1 !important; transform: none !important; }
