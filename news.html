@@ -108,7 +108,8 @@
         const date = fm.date ? new Date(fm.date).toLocaleDateString('ko-KR') : '';
 
         newsHTML += `
-          <div style="padding: 40px; background: var(--dark-3); border: 1px solid var(--border-dk); border-radius: var(--r-lg); transition: all 0.22s ease;">
+          <div style="padding: 40px; background: var(--dark-3); border: 1px solid var(--border-dk); border-radius: var(--r-lg); transition: all 0.22s ease; opacity: 1; transform: none;">
+
             <div style="color: var(--text-muted-dk); font-size: 0.9rem; margin-bottom: 12px;">${date}${fm.category ? ' · ' + fm.category : ''}</div>
             <h3 style="font-size: 1.4rem; margin: 0 0 16px; color: var(--text-dk);">${fm.title || '제목 없음'}</h3>
             <div style="color: var(--text-muted-dk); line-height: 1.7; margin-bottom: 16px;">${html}</div>
