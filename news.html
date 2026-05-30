@@ -88,7 +88,7 @@
       let newsHTML = '';
 
       for (const file of mdFiles) {
-        const res = await fetch(file.download_url);
+        const res = await fetch(encodeURI(file.download_url));
         const markdown = await res.text();
         const lines = markdown.split('\n');
         let fm = {}, inFM = false, fmEnd = 0;
