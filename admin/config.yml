@@ -2,7 +2,7 @@ backend:
   name: github
   repo: iep2023official-ai/kimettesite
   branch: main
-  auth_type: implicit
+  auth_type: pkce
   app_id: Ov23likzpfOSV6o8TNt9
 
 media_folder: "news-images"
