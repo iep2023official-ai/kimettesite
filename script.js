@@ -1,5 +1,5 @@
-const SPABASE_URL = 'https://infnksuhkxbnitbshmnf.supabase.co/rest/v1/';
-const SPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImluZm5rc3Voa3hibml0YnNobW5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAyNjYxODAsImV4cCI6MjA5NTg0MjE4MH0.I8d7wN85cSTITSHST-K_ZjdtEG_phIf8gMX4M6vEHqM';
+const SUPABASE_URL = 'https://infnksuhkxbnitbshmnf.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImluZm5rc3Voa3hibml0YnNobW5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAyNjYxODAsImV4cCI6MjA5NTg0MjE4MH0.I8d7wN85cSTITSHST-K_ZjdtEG_phIf8gMX4M6vEHqM';
 /* ===========================
    NAV — hide on scroll down
    =========================== */
