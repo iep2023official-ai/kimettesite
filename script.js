@@ -1,3 +1,5 @@
+const SPABASE_URL = 'https://infnksuhkxbnitbshmnf.supabase.co/rest/v1/';
+const SPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImluZm5rc3Voa3hibml0YnNobW5mIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAyNjYxODAsImV4cCI6MjA5NTg0MjE4MH0.I8d7wN85cSTITSHST-K_ZjdtEG_phIf8gMX4M6vEHqM';
 /* ===========================
    NAV — hide on scroll down
    =========================== */
@@ -328,8 +330,39 @@
       alert('회사명/이름과 이메일은 필수 항목입니다.');
       return;
     }
-    form.style.display = 'none';
-    success.removeAttribute('hidden');
-    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = '전송 중…';
+
+    fetch(SUPABASE_URL + '/rest/v1/contacts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY
+      },
+      body: JSON.stringify({
+        company:       company,
+        email:         email,
+        pigment:       form.querySelector('#f-pigment').value.trim(),
+        formulation:   form.querySelector('#f-formulation').value.trim(),
+        certification: form.querySelector('#f-cert').value.trim(),
+        volume:        form.querySelector('#f-volume').value.trim(),
+        message:       form.querySelector('#f-message').value.trim()
+      })
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('서버 오류');
+      form.style.display = 'none';
+      success.removeAttribute('hidden');
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    .catch(function() {
+      btn.disabled = false;
+      btn.textContent = '샘플 및 기술 상담 신청 →';
+      alert('전송 중 오류가 발생했습니다. 이메일로 직접 문의해 주세요.');
+    });
   });
 })();
+
