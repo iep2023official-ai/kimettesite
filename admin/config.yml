@@ -3,7 +3,7 @@ backend:
   repo: iep2023official-ai/kimettesite
   branch: main
   auth_type: implicit
-  app_id: YOUR_CLIENT_ID
+  app_id: Ov23likzpfOSV6o8TNt9
 
 media_folder: "news-images"
 public_folder: "/news-images"
