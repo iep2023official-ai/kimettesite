@@ -2,6 +2,8 @@ backend:
   name: github
   repo: iep2023official-ai/kimettesite
   branch: main
+  auth_type: implicit
+  app_id: YOUR_CLIENT_ID
 
 media_folder: "news-images"
 public_folder: "/news-images"
