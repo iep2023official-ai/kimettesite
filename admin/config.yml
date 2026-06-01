@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: iep2023official-ai/kimettesite
+  branch: main
+
+media_folder: "news-images"
+public_folder: "/news-images"
+
+collections:
+  - name: "news"
+    label: "최신 소식"
+    folder: "_news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "날짜", name: "date", widget: "datetime"}
+      - {label: "카테고리", name: "category", widget: "select", options: ["보도자료", "언론보도", "수상", "학술발표"]}
+      - {label: "내용", name: "body", widget: "markdown"}
+      - {label: "썸네일", name: "thumbnail", widget: "image", required: false}
+      - {label: "외부링크", name: "link", widget: "string", required: false}
