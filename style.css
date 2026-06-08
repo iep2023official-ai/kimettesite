@@ -345,7 +345,7 @@ h1 mark::after {
   font-family: var(--font-mono); font-size: 1.3rem; font-weight: 800;
   color: var(--magenta-bright); letter-spacing: -0.03em; line-height: 1;
 }
-.meta-scale { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-muted-dk); }
+.meta-scale { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted-dk); }
 
 /* Hero stats strip */
 .hero-stats {
