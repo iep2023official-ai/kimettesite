@@ -1,101 +1,84 @@
-// Google Apps Script Web App URL
+/**
+ * Kimcolor Website Script
+ * Google Apps Script Web App Integration for Email Notifications
+ */
+
+// Google Apps Script Deploy URL
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwe7Jb5mUMfxmG-mzcwLDlKP7BmOA6X3ZaugkZztAa9YmfhpvEdSDvgWX-F3aU9W7hx/exec';
 
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // 1. 페이지별 동적 콘텐츠 로딩 및 탭 처리 (기존 스크립트 복구)
-    initPageFeatures();
-
-    // 2. 문의 폼 전송 및 Google Apps Script 연동
-    initContactForm();
-
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize Form Handler
+  initContactForm();
 });
 
-function initPageFeatures() {
-    // 탭 메뉴 및 동적 요소 제어
-    const tabButtons = document.querySelectorAll('.tab-btn, .nav-item');
-    const tabContents = document.querySelectorAll('.tab-content, .section-content');
-
-    if (tabButtons.length > 0) {
-        tabButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('data-target') || this.getAttribute('href');
-                if (targetId && targetId.startsWith('#')) {
-                    e.preventDefault();
-                    
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-
-                    this.classList.add('active');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.classList.add('active');
-                    }
-                }
-            });
-        });
-    }
-
-    // 모바일 메뉴 토글
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav, .nav-menu');
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-    }
-}
-
 function initContactForm() {
-    const form = document.querySelector('form');
-    if (!form) return;
+  const form = document.querySelector('form');
+  if (!form) return;
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-        const submitBtn = form.querySelector('button[type="submit"]');
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.textContent = '전송 중...';
-        }
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.innerText : '신청하기';
 
-        // 입력 데이터 추출
-        const formData = {
-            company: document.getElementById('company')?.value || form.querySelector('[name="company"]')?.value || '',
-            email: document.getElementById('email')?.value || form.querySelector('[name="email"]')?.value || '',
-            pigment: document.getElementById('pigment')?.value || form.querySelector('[name="pigment"]')?.value || '',
-            formulation: document.getElementById('formulation')?.value || form.querySelector('[name="formulation"]')?.value || '',
-            certification: document.getElementById('certification')?.value || form.querySelector('[name="certification"]')?.value || '',
-            volume: document.getElementById('volume')?.value || form.querySelector('[name="volume"]')?.value || '',
-            message: document.getElementById('message')?.value || form.querySelector('[name="message"]')?.value || ''
-        };
+    // Get Form Elements
+    const companyInput = form.querySelector('input[name="company"]') || form.querySelector('input[type="text"]');
+    const emailInput = form.querySelector('input[name="email"]') || form.querySelector('input[type="email"]');
+    const pigmentInput = form.querySelector('input[name="pigment"]');
+    const formulationInput = form.querySelector('input[name="formulation"]');
+    const certificationInput = form.querySelector('input[name="certification"]');
+    const volumeInput = form.querySelector('input[name="volume"]');
+    const messageInput = form.querySelector('textarea[name="message"]') || form.querySelector('textarea');
 
-        const payload = new URLSearchParams();
-        for (const key in formData) {
-            payload.append(key, formData[key]);
-        }
+    if (!companyInput || !emailInput) {
+      alert('필수 입력 항목이 누락되었습니다.');
+      return;
+    }
 
-        fetch(GOOGLE_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: payload.toString()
-        })
-        .then(() => {
-            alert('샘플 및 기술 상담 신청이 성공적으로 접수되었습니다.');
-            form.reset();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
-        })
-        .finally(() => {
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = '신청하기';
-            }
-        });
-    });
+    const payload = {
+      company: companyInput.value.trim(),
+      email: emailInput.value.trim(),
+      pigment: pigmentInput ? pigmentInput.value.trim() : '',
+      formulation: formulationInput ? formulationInput.value.trim() : '',
+      certification: certificationInput ? certificationInput.value.trim() : '',
+      volume: volumeInput ? volumeInput.value.trim() : '',
+      message: messageInput ? messageInput.value.trim() : ''
+    };
+
+    if (!payload.company || !payload.email) {
+      alert('회사명/성함과 이메일을 입력해 주세요.');
+      return;
+    }
+
+    // UI Loading State
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerText = '전송 중...';
+    }
+
+    try {
+      // Send data to Google Apps Script
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Apps Script CORS handoff
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      // Show Success Message
+      alert('신청이 성공적으로 완료되었습니다.\n영업일 기준 48시간 이내에 회신드리겠습니다.');
+      form.reset();
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalBtnText;
+      }
+    }
+  });
 }
