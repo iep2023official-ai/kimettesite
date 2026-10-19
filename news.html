@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 뉴스 카드: 이미지가 있으면 오른쪽에 배치 */
+    /* 뉴스 카드: 이미지가 있으면 오른쪽에 배치 (80% 비율로 축소) */
     .news-card { display: flex; align-items: center; gap: 40px; }
     .news-card-text { flex: 1; min-width: 0; }
-    .news-card-img { flex: 0 0 36%; max-width: 380px; }
+    .news-card-img { flex: 0 0 29%; max-width: 304px; }
     .news-card-img img { display: block; width: 100%; height: auto; border-radius: var(--r-md); border: 1px solid var(--border-dk); }
     @media (max-width: 760px) {
       .news-card { flex-direction: column; align-items: stretch; gap: 24px; }
