@@ -133,12 +133,12 @@ ul { list-style: none; }
    LABELS & UTILITY
    =========================== */
 .section-label {
-  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 18px;
   color: var(--magenta);
 }
 .section-label-mg {
-  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 18px;
   color: var(--magenta-bright);
 }
@@ -147,7 +147,7 @@ ul { list-style: none; }
 .dark-div { background: var(--border-dk); }
 
 .sub-section-title {
-  font-family: var(--font-mono); font-size: 0.67rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.14em;
   color: var(--text-muted-lt); margin-bottom: 22px;
 }
@@ -264,7 +264,7 @@ ul { list-style: none; }
 
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600;
   letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--text-muted-dk); margin-bottom: 28px;
 }
@@ -386,7 +386,7 @@ h1 mark::after {
   color: var(--magenta-bright); letter-spacing: -0.02em;
 }
 .stat-label {
-  font-family: var(--font-mono); font-size: 0.62rem;
+  font-family: var(--font-mono); font-size: 0.68rem;
   letter-spacing: 0.09em; color: var(--text-muted-dk);
   text-transform: uppercase;
 }
@@ -418,7 +418,7 @@ h1 mark::after {
   gap: 16px; flex: 1; text-align: center;
 }
 .step-num {
-  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
   letter-spacing: 0.1em; color: var(--magenta); margin-bottom: 4px;
 }
 .step-icon {
@@ -516,7 +516,7 @@ h1 mark::after {
 }
 
 .problem-num {
-  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700;
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
   letter-spacing: 0.14em; color: var(--magenta-bright); margin-bottom: 14px;
 }
 .problem-card h3 { color: var(--text-dk); margin-bottom: 6px; }
@@ -554,7 +554,7 @@ h1 mark::after {
 .callout-inner { position: relative; z-index: 2; max-width: 720px; }
 
 .callout-kicker {
-  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.77rem; font-weight: 600;
   letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--magenta); margin-bottom: 20px;
 }
@@ -604,7 +604,7 @@ h1 mark::after {
 /* Spectrum */
 .spectrum-section { margin-bottom: 48px; }
 .spectrum-label-txt {
-  font-family: var(--font-mono); font-size: 0.67rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.12em;
   color: var(--text-muted-lt); margin-bottom: 14px;
 }
@@ -631,14 +631,14 @@ h1 mark::after {
 .marker-line { width: 2px; flex: 1; background: var(--text-lt); }
 .marker-label {
   position: absolute; top: -26px;
-  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700;
+  font-family: var(--font-mono); font-size: 0.79rem; font-weight: 700;
   color: var(--text-lt); background: var(--cream); padding: 2px 8px;
   border-radius: 4px; border: 1px solid var(--border-lt);
   white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 .spectrum-ends {
   display: flex; justify-content: space-between;
-  font-family: var(--font-mono); font-size: 0.66rem;
+  font-family: var(--font-mono); font-size: 0.73rem;
   color: var(--text-muted-lt); margin-top: 6px;
 }
 .spectrum-note { margin-top: 12px; font-size: 0.84rem; color: var(--text-muted-lt); }
@@ -657,7 +657,7 @@ h1 mark::after {
 }
 .prop-item:hover { background: var(--cream-2); }
 .prop-label {
-  font-family: var(--font-mono); font-size: 0.65rem;
+  font-family: var(--font-mono); font-size: 0.72rem;
   text-transform: uppercase; letter-spacing: 0.11em;
   color: var(--text-muted-lt); margin-bottom: 8px;
 }
@@ -683,7 +683,7 @@ h1 mark::after {
 .compare-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
 .compare-table th {
   text-align: left; padding: 12px 20px;
-  font-family: var(--font-mono); font-size: 0.65rem;
+  font-family: var(--font-mono); font-size: 0.72rem;
   text-transform: uppercase; letter-spacing: 0.11em;
   color: var(--text-muted-lt); border-bottom: 1px solid var(--border-lt);
   background: var(--cream-2); white-space: nowrap;
@@ -705,7 +705,7 @@ h1 mark::after {
 .spec-table tr:last-child td { border-bottom: none; }
 .spec-table tr.table-row-visible { animation: rowFadeIn 0.4s ease both; }
 .spec-key {
-  font-family: var(--font-mono); font-size: 0.65rem;
+  font-family: var(--font-mono); font-size: 0.72rem;
   text-transform: uppercase; letter-spacing: 0.09em;
   color: var(--text-muted-lt); width: 160px;
   background: var(--cream-2); white-space: nowrap;
@@ -826,7 +826,7 @@ h1 mark::after {
   line-height: 1.8; letter-spacing: -0.02em;
 }
 .principles-heading {
-  font-family: var(--font-mono); font-size: 0.67rem; font-weight: 600;
+  font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600;
   text-transform: uppercase; letter-spacing: 0.16em;
   color: var(--text-muted-lt); margin-bottom: 24px;
 }
