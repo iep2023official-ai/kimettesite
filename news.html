@@ -7,6 +7,17 @@
   <meta name="description" content="Kimcolor의 최신 뉴스, 보도자료, 그리고 언론 보도를 확인하세요.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* 뉴스 카드: 이미지가 있으면 오른쪽에 배치 */
+    .news-card { display: flex; align-items: center; gap: 40px; }
+    .news-card-text { flex: 1; min-width: 0; }
+    .news-card-img { flex: 0 0 36%; max-width: 380px; }
+    .news-card-img img { display: block; width: 100%; height: auto; border-radius: var(--r-md); border: 1px solid var(--border-dk); }
+    @media (max-width: 760px) {
+      .news-card { flex-direction: column; align-items: stretch; gap: 24px; }
+      .news-card-img { flex: none; max-width: 100%; }
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
 </head>
 <body>
@@ -67,7 +78,7 @@
     <div class="container footer-inner">
       <span class="footer-logo"><img src="kimcolorlogo.png" alt="Kimette" style="height: 36px; vertical-align: middle;"></span>
       <span class="footer-copy">© 2025 Kimcolor. All rights reserved.</span>
-      <a href="mailto:iep2023official@gmail.com" class="footer-email">iep2023official@gmail.com</a>
+      <a href="mailto:official@kimcolor.co.kr" class="footer-email">official@kimcolor.co.kr</a>
     </div>
   </footer>
 
@@ -106,14 +117,18 @@
         const body = lines.slice(fmEnd).join('\n');
         const html = marked.parse(body);
         const date = fm.date ? new Date(fm.date).toLocaleDateString('ko-KR') : '';
+        const imgHTML = fm.image ? '<div class="news-card-img"><img src="' + fm.image + '" alt="' + (fm.title || '').replace(/"/g, '&quot;') + '" loading="lazy"></div>' : '';
 
         newsHTML += `
-          <div style="padding: 40px; background: var(--dark-3); border: 1px solid var(--border-dk); border-radius: var(--r-lg); transition: all 0.22s ease; opacity: 1; transform: none;">
+          <div class="news-card" style="padding: 40px; background: var(--dark-3); border: 1px solid var(--border-dk); border-radius: var(--r-lg); transition: all 0.22s ease; opacity: 1; transform: none;">
+            <div class="news-card-text">
 
             <div style="color: var(--text-muted-dk); font-size: 0.9rem; margin-bottom: 12px;">${date}${fm.category ? ' · ' + fm.category : ''}</div>
             <h3 style="font-size: 1.4rem; margin: 0 0 16px; color: var(--text-dk);">${fm.title || '제목 없음'}</h3>
             <div style="color: var(--text-muted-dk); line-height: 1.7; margin-bottom: 16px;">${html}</div>
             ${fm.link ? '<a href="' + fm.link + '" target="_blank" style="color: var(--magenta-bright); text-decoration: none;">자세히 보기 →</a>' : ''}
+            </div>
+            ${imgHTML}
           </div>`;
       }
 
