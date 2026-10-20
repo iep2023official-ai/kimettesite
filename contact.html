@@ -7,6 +7,20 @@
   <meta name="description" content="Kimcolor에 문의하고 샘플 키트 및 기술 자료를 신청하세요.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* 문의 페이지 '소식' 영역 */
+    .contact-news-item { padding: 22px 0; border-bottom: 1px solid var(--border-lt); }
+    .contact-news-item:first-child { padding-top: 6px; }
+    .contact-news-item:last-child { border-bottom: none; }
+    .contact-news-meta { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.08em; color: var(--text-muted-lt); margin-bottom: 8px; }
+    .contact-news-item h4 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.4; color: var(--text-lt); margin: 0 0 8px; }
+    .contact-news-body { font-size: 0.93rem; line-height: 1.75; color: rgba(13, 12, 12, 0.7); }
+    .contact-news-body p { margin-bottom: 0.6em; }
+    .contact-news-body a, .contact-news-link { color: var(--magenta); font-weight: 600; }
+    .contact-news-link { display: inline-block; margin-top: 6px; font-size: 0.88rem; }
+    .contact-news-more { display: none; margin-top: 18px; font-size: 0.9rem; font-weight: 700; color: var(--magenta); }
+    .contact-news-more:hover, .contact-news-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+  </style>
 </head>
 <body>
 
@@ -79,7 +93,10 @@
       <div class="section-divider fade-in"></div>
       <div class="news-section fade-in">
         <h3>소식</h3>
-        <p class="news-placeholder">언론 보도·수상·학술 발표 자료 준비 중입니다.</p>
+        <div id="contact-news" class="contact-news">
+          <p class="news-placeholder">소식을 불러오는 중입니다.</p>
+        </div>
+        <a href="news.html" id="contact-news-more" class="contact-news-more">전체 소식 보기 →</a>
       </div>
     </div>
   </section>
@@ -140,6 +157,105 @@
       <a href="mailto:official@kimcolor.co.kr" class="footer-email">official@kimcolor.co.kr</a>
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+  <script>
+  // 최신 소식 3개를 불러와 '소식' 영역에 표시 (사진은 표시하지 않음)
+  (function () {
+    const box  = document.getElementById('contact-news');
+    const more = document.getElementById('contact-news-more');
+    if (!box) return;
+
+    const COUNT = 3;
+    const EMPTY_TEXT = '언론 보도·수상·학술 발표 자료 준비 중입니다.';
+    const clean = function (v) { return (v || '').replace(/^["']|["']$/g, ''); };
+
+    function showEmpty() {
+      box.innerHTML = '';
+      const p = document.createElement('p');
+      p.className = 'news-placeholder';
+      p.textContent = EMPTY_TEXT;
+      box.appendChild(p);
+      more.style.display = 'none';
+    }
+
+    function parse(md) {
+      const lines = md.split(/\r?\n/);
+      const fm = {};
+      let inFM = false, end = 0;
+      for (let i = 0; i < lines.length; i++) {
+        if (lines[i].trim() === '---') {
+          if (!inFM) { inFM = true; }
+          else if (Object.keys(fm).length === 0) { continue; }   // '---'가 연달아 있어도 처리
+          else { end = i + 1; break; }
+        } else if (inFM && lines[i].includes(':')) {
+          const k = lines[i].indexOf(':');
+          fm[lines[i].slice(0, k).trim()] = lines[i].slice(k + 1).trim();
+        }
+      }
+      return { fm: fm, body: lines.slice(end).join('\n') };
+    }
+
+    function card(fm, body) {
+      const item = document.createElement('article');
+      item.className = 'contact-news-item';
+
+      const date = fm.date ? new Date(fm.date).toLocaleDateString('ko-KR') : '';
+      const cat  = clean(fm.category);
+      const meta = document.createElement('div');
+      meta.className = 'contact-news-meta';
+      meta.textContent = date + (cat ? (date ? ' · ' : '') + cat : '');
+
+      const title = document.createElement('h4');
+      title.textContent = clean(fm.title) || '제목 없음';
+
+      const text = document.createElement('div');
+      text.className = 'contact-news-body';
+      if (typeof marked !== 'undefined') {
+        text.innerHTML = marked.parse(body).replace(/<img[^>]*>/gi, '');
+      } else {
+        text.textContent = body.trim();
+      }
+
+      item.appendChild(meta);
+      item.appendChild(title);
+      item.appendChild(text);
+
+      const link = clean(fm.link);
+      if (/^https?:\/\//i.test(link)) {
+        const a = document.createElement('a');
+        a.className = 'contact-news-link';
+        a.href = link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = '자세히 보기 →';
+        item.appendChild(a);
+      }
+      return item;
+    }
+
+    fetch('https://api.github.com/repos/iep2023official-ai/kimettesite/contents/_news')
+      .then(function (r) { return r.json(); })
+      .then(function (files) {
+        if (!Array.isArray(files)) throw new Error('bad response');
+        const mds = files.filter(function (f) { return f.name.endsWith('.md'); })
+                         .sort(function (a, b) { return b.name.localeCompare(a.name); })
+                         .slice(0, COUNT);
+        if (!mds.length) { showEmpty(); return; }
+        return Promise.all(mds.map(function (f) {
+          return fetch(encodeURI(f.download_url)).then(function (r) { return r.text(); });
+        })).then(function (texts) {
+          box.innerHTML = '';
+          texts.forEach(function (t) {
+            const p = parse(t);
+            box.appendChild(card(p.fm, p.body));
+          });
+          more.style.display = 'inline-block';
+        });
+      })
+      .catch(showEmpty);
+  })();
+  </script>
 
   <script src="script.js"></script>
 </body>
