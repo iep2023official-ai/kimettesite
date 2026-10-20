@@ -1086,3 +1086,38 @@ footer { background: #080707; padding: 32px 0; }
 }
 
 #news-grid > div { opacity: 1 !important; transform: none !important; }
+
+/* ===========================
+   THANKS MODAL (문의 접수 완료 팝업)
+   =========================== */
+.thanks-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+.thanks-box {
+  width: 100%; max-width: 380px; text-align: center;
+  padding: 40px 32px 32px;
+  background: var(--dark-3);
+  border: 1px solid rgba(192, 16, 97, 0.3);
+  border-radius: var(--r-xl);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+.thanks-icon {
+  width: 52px; height: 52px; margin: 0 auto 18px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--magenta-soft);
+  border: 1px solid rgba(192, 16, 97, 0.3);
+  color: var(--magenta-bright);
+  font-size: 1.5rem; font-weight: 800;
+}
+.thanks-title {
+  font-size: 1.1rem; font-weight: 700; line-height: 1.6;
+  letter-spacing: -0.02em; color: var(--text-dk);
+  margin-bottom: 26px;
+}
+.thanks-close { min-width: 120px; }

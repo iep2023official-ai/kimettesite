@@ -315,54 +315,67 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 })();
 
 /* ===========================
-   CONTACT FORM
+   CONTACT FORM — 구글 스크립트로 전송, 완료되면 팝업
    =========================== */
 (function () {
-  const form    = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
-  if (!form || !success) return;
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  function showThanks() {
+    if (document.getElementById('thanks-modal')) return;
+
+    const overlay = document.createElement('div');
+    overlay.id = 'thanks-modal';
+    overlay.className = 'thanks-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'thanks-title');
+    overlay.innerHTML =
+      '<div class="thanks-box">' +
+        '<div class="thanks-icon" aria-hidden="true">✓</div>' +
+        '<p class="thanks-title" id="thanks-title">문의가 접수되었습니다.<br>감사합니다.</p>' +
+        '<button type="button" class="btn btn-accent thanks-close">확인</button>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    const closeBtn = overlay.querySelector('.thanks-close');
+
+    function close() {
+      document.removeEventListener('keydown', onKey);
+      overlay.remove();
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', onKey);
+    closeBtn.focus();
+  }
 
   form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const company = form.querySelector('#f-company').value.trim();
-    const email   = form.querySelector('#f-email').value.trim();
-    if (!company || !email) {
-      alert('회사명/이름과 이메일은 필수 항목입니다.');
-      return;
-    }
+    e.preventDefault();                        // 페이지가 넘어가지 않게 막음
+    if (!form.reportValidity()) return;        // 필수 항목 확인
 
-    const btn = form.querySelector('button[type="submit"]');
+    const btn   = form.querySelector('button[type="submit"]');
+    const label = btn.textContent;
     btn.disabled = true;
     btn.textContent = '전송 중…';
 
-    fetch(SUPABASE_URL + '/rest/v1/contacts', {
+    fetch(form.action, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': SUPABASE_KEY,
-        'Authorization': 'Bearer ' + SUPABASE_KEY
-      },
-      body: JSON.stringify({
-        company:       company,
-        email:         email,
-        pigment:       form.querySelector('#f-pigment').value.trim(),
-        formulation:   form.querySelector('#f-formulation').value.trim(),
-        certification: form.querySelector('#f-cert').value.trim(),
-        volume:        form.querySelector('#f-volume').value.trim(),
-        message:       form.querySelector('#f-message').value.trim()
-      })
+      mode: 'no-cors',                         // 구글 스크립트는 응답 내용을 읽을 수 없음
+      body: new URLSearchParams(new FormData(form))
     })
-    .then(function(res) {
-      if (!res.ok) throw new Error('서버 오류');
-      form.style.display = 'none';
-      success.removeAttribute('hidden');
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    .then(function () {
+      form.reset();
+      showThanks();
     })
-    .catch(function() {
+    .catch(function () {
+      alert('전송 중 오류가 발생했습니다. 이메일(official@kimcolor.co.kr)로 직접 문의해 주세요.');
+    })
+    .finally(function () {
       btn.disabled = false;
-      btn.textContent = '샘플 및 기술 상담 신청 →';
-      alert('전송 중 오류가 발생했습니다. 이메일로 직접 문의해 주세요.');
+      btn.textContent = label;
     });
   });
 })();
-
